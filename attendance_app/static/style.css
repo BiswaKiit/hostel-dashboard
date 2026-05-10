@@ -1,0 +1,59 @@
+body {
+    font-family: Arial;
+    margin: 0;
+    background: #f5f7fa;
+}
+
+.container {
+    max-width: 500px;
+    margin: auto;
+    padding: 10px;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+}
+
+.year-block {
+    background: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-left: 5px solid #007bff;
+}
+
+.row {
+    display: flex;
+    gap: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.success {
+    border: 2px solid green;
+}
+
+.error {
+    border: 2px solid red;
+}
+
+/* 📊 Report */
+.report-box {
+    background: white;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 10px;
+    background: #007bff;
+    color: white;
+    margin-top: 20px;
+}
