@@ -7,9 +7,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="manifest" href="/manifest.json">
+<link rel="manifest" href="/boarders/manifest.json">
 <meta name="theme-color" content="#003366">
-<link rel="icon" href="/icon.png">
+<link rel="icon" href="/boarders/icon.png">
 
 <style>
 
@@ -154,8 +154,6 @@ onkeypress="if(event.key==='Enter'){search();}">
 
 <button onclick="search()">Search</button>
 
-
-
 </div>
 
 <div class="dashboard">
@@ -182,7 +180,7 @@ Year Stats
 
 <div class="footer">
 Created by: Biswa Ranjan Mishra
-<a href="/admin">Admin</a>
+<a href="/boarders/admin">Admin</a>
 </div>
 
 <div class="modal" id="popupModal">
@@ -207,7 +205,7 @@ let vacantBedsList=[]
 
 function loadDashboard(){
 
-fetch("/students")
+fetch("/boarders/students")
 
 .then(res=>res.json())
 
