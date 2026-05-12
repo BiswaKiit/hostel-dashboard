@@ -12,8 +12,8 @@ app = Flask(
     static_folder="static"
 )
 
-# ✅ FIXED DATABASE URL
-DATABASE_URL = os.getenv("DATABASE_URL") or "postgresql://attendance_user:hIEyKUeKKblpFAYtYXjcDp5GCXGQZcbl@dpg-d7b5hdjuibrs73b6m1d0-a.oregon-postgres.render.com/attendance_2cet?sslmode=require"
+# ✅ NEON DATABASE
+DATABASE_URL = os.environ.get("DATABASE_URL")
 
 floors = ["Ground Floor", "1st Floor", "2nd Floor", "3rd Floor", "4th Floor"]
 years = ["1st Year", "2nd Year", "3rd Year", "4th Year"]
