@@ -13,7 +13,10 @@ app = Flask(
 )
 
 # ✅ NEON DATABASE
-DATABASE_URL = os.environ.get("DATABASE_URL")
+DATABASE_URL = os.environ.get(
+    "DATABASE_URL",
+    "postgresql://neondb_owner:npg_Qw6fxiGTp7VB@ep-old-silence-aov11lqm-pooler.c-2.ap-southeast-1.aws.neon.tech/attendance?sslmode=require&channel_binding=require"
+)
 
 floors = ["Ground Floor", "1st Floor", "2nd Floor", "3rd Floor", "4th Floor"]
 years = ["1st Year", "2nd Year", "3rd Year", "4th Year"]
@@ -21,20 +24,20 @@ years = ["1st Year", "2nd Year", "3rd Year", "4th Year"]
 
 # ✅ SAFE CONNECTION
 def get_conn():
+
     try:
+
         conn = psycopg2.connect(
             DATABASE_URL,
-            sslmode="require",
-            connect_timeout=10,
-            keepalives=1,
-            keepalives_idle=30,
-            keepalives_interval=10,
-            keepalives_count=5
+            connect_timeout=10
         )
+
         return conn
 
     except Exception as e:
-        print("DB ERROR:", e)
+
+        print("DB ERROR:", str(e))
+
         return None
 
 
