@@ -1,9 +1,18 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Hostel Dashboard</title>
+
+<title>Hostel Manager</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- PWA -->
+<link rel="manifest" href="/static/manifest.json">
+
+<link rel="icon" href="/static/logo.png">
+
+<meta name="theme-color" content="#003366">
 
 <style>
 
@@ -30,6 +39,7 @@ box-shadow:0 5px 20px rgba(0,0,0,0.2);
 h1{
 color:#003366;
 margin-bottom:30px;
+font-size:32px;
 }
 
 a{
@@ -42,16 +52,26 @@ margin:15px 0;
 border-radius:12px;
 font-size:18px;
 font-weight:bold;
+transition:0.3s;
 }
 
 a:hover{
 background:#0056b3;
+transform:scale(1.02);
 }
 
 .footer{
 margin-top:20px;
 font-size:14px;
 color:gray;
+}
+
+.install-btn{
+background:#00c853;
+}
+
+.install-btn:hover{
+background:#009624;
 }
 
 </style>
@@ -62,7 +82,7 @@ color:gray;
 
 <div class="container">
 
-<h1>🏨 Hostel Dashboard</h1>
+<h1>🏨 Hostel Manager</h1>
 
 <a href="/attendance/">📊 Attendance App</a>
 
@@ -73,6 +93,19 @@ Created by Biswa Ranjan Mishra 🚀
 </div>
 
 </div>
+
+<!-- SERVICE WORKER -->
+<script>
+
+if ('serviceWorker' in navigator) {
+
+navigator.serviceWorker.register('/static/service-worker.js')
+
+.then(() => console.log("Service Worker Registered"));
+
+}
+
+</script>
 
 </body>
 </html>
