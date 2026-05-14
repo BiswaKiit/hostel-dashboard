@@ -6,7 +6,11 @@ from attendance_app.main import app as attendance_app
 from boarders_manager.main import app as boarders_app
 
 # MAIN HOME APP
-home_app = Flask(__name__)
+home_app = Flask(
+    __name__,
+    template_folder="templates",
+    static_folder="static"
+)
 
 # HOME PAGE
 @home_app.route("/")
